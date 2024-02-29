@@ -1,0 +1,70 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add @stylistic/js --dev
+
+PATH: 
+  /Users/sergiosg/.console-ninja/.bin:/Users/sergiosg/opt/anaconda3/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Library/Apple/usr/bin:/Users/sergiosg/.console-ninja/.bin:/Users/sergiosg/opt/anaconda3/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.12.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/@stylistic%2fjs: Not found
+      at params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66145:18)
+      at self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140890:22)
+      at Request.emit (node:events:513:28)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141862:10)
+      at Request.emit (node:events:513:28)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141784:12)
+      at Object.onceWrapper (node:events:627:28)
+      at IncomingMessage.emit (node:events:525:35)
+      at endReadableNT (node:internal/streams/readable:1359:12)
+      at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+
+npm manifest: 
+  {
+    "name": "phonebook",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "dev": "nodemon index.js",
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build:ui": "rm -rf dist && cd ../frontend/ && npm run build && cp -r build ../backend",
+      "deploy": "fly deploy",
+      "deploy:full": "npm run build:ui && npm run deploy",
+      "logs:prod": "fly logs",
+      "lint": "eslint ."
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "dotenv": "^16.4.5",
+      "express": "^4.18.2",
+      "mongoose": "^8.2.0",
+      "morgan": "^1.10.0"
+    },
+    "devDependencies": {
+      "@flydotio/dockerfile": "^0.5.2",
+      "@stylistic/eslint-plugin-js": "^1.6.2",
+      "eslint": "^8.57.0",
+      "eslint-config-airbnb": "^19.0.4",
+      "eslint-plugin-import": "^2.29.1",
+      "eslint-plugin-jsx-a11y": "^6.8.0",
+      "eslint-plugin-react": "^7.33.2",
+      "eslint-plugin-react-hooks": "^4.6.0",
+      "nodemon": "^3.1.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
