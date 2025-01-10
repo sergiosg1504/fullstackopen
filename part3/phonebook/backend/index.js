@@ -188,7 +188,7 @@ const errorHandler = (error, request, response, next) => {
 
   next(error)
 }
-app.use(errorHandler) // this has to be the last loaded middleware, also all the routes should be registered before this!
+app.use(errorHandler) // this has to be the last loaded middleware, also all the routes should be registered before this
 
 const PORT = process.env.PORT || 3001
 app.listen(PORT, () => {

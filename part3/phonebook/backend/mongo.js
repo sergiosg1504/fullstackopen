@@ -7,9 +7,14 @@ if (process.argv.length !== 3 && process.argv.length !== 5) {
 
 const password = process.argv[2]
 
+if (password === undefined) {
+  console.log('give password as argument')
+  process.exit(1)
+}
+
 const url = `mongodb+srv://sergiosg:${password}@cluster0.nlmeeep.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
 
-mongoose.set('strictQuery',false)
+mongoose.set('strictQuery', false)
 mongoose.connect(url)
 
 const personSchema = new mongoose.Schema({
@@ -37,7 +42,7 @@ if (process.argv.length === 3) { // print all persons
   })
 
   person.save().then(result => {
-    if (result.name === undefined || result.number === undefined)  {
+    if (result.name === undefined || result.number === undefined) {
       console.log('ERROR')
       mongoose.connection.close()
       process.exit(1)

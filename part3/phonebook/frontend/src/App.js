@@ -46,7 +46,11 @@ const App = () => {
             }, 5000)
           })
           .catch(error => {
-            alert(error.response.data.error)
+            // alert(error.response.data.error)
+            setErrorMessage(error.response.data.error)
+            setTimeout(() => {
+              setErrorMessage(null)
+            }, 5000)
             console.log(error.response.data)
           })
       }
@@ -64,7 +68,11 @@ const App = () => {
         }, 5000)
       })
       .catch(error => {
-        alert(error.response.data.error)
+        // alert(error.response.data.error)
+        setErrorMessage(error.response.data.error)
+        setTimeout(() => {
+          setErrorMessage(null)
+        }, 5000)
         console.log(error.response.data)
       })
   }
@@ -107,18 +115,18 @@ const App = () => {
   }
 
   useEffect(getAll
-  , [])
+    , [])
 
   return (
     <div>
       <h2>Phonebook</h2>
-      <Notification message={successMessage} type={true}/>
-      <Notification message={errorMessage} type={false}/>
-      <Filter filter={filter} handleFilterChange={handleFilterChange}/>
+      <Notification message={successMessage} type={true} />
+      <Notification message={errorMessage} type={false} />
+      <Filter filter={filter} handleFilterChange={handleFilterChange} />
       <h3>Add a new</h3>
-      <PersonForm addPerson={addPerson} newName={newName} handleNameChange={handleNameChange} newNumber={newNumber} handleNumberChange={handleNumberChange}/>
+      <PersonForm addPerson={addPerson} newName={newName} handleNameChange={handleNameChange} newNumber={newNumber} handleNumberChange={handleNumberChange} />
       <h1>Numbers</h1>
-      <Persons personsToShow={personsToShow} remove={remove} removeLabel="Delete"/>
+      <Persons personsToShow={personsToShow} remove={remove} removeLabel="Delete" />
     </div>
   )
 }
